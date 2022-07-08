@@ -2,6 +2,8 @@
 <?php
 // http://localhost:8888/php-badwords/?censura=PHP
 
+echo "<h2> Testo originale </h2>";
+
 $testo = "PHP (acronimo ricorsivo di 'PHP: Hypertext Preprocessor', preprocessore di ipertesti;
 originariamente acronimo di 'Personal Home Page[1]) è un linguaggio di scripting interpretato,
 originariamente concepito per la programmazione di pagine web dinamiche.
@@ -21,10 +23,16 @@ $censura =  $_GET["censura"];
 
 var_dump($_GET);
 echo "<br>";
-echo $censura;
+//echo $censura;
 echo "<br>";
-echo stripos($testo, "PHP");
-//echo "Il testo contiene la parola <strong>PHP</strong> ??" . strpos(strtolower, "PHP");
+echo "il testo contiene la parola " . $censura . "? se si il primo indice dove la parola compare è il n. " . strpos($testo, "PHP");
 
+if (strpos($testo, $censura) !== false) {
+    $testo = str_ireplace($censura, "***", $testo);
+}
+
+echo "<br>";
+echo "<h2> Testo modificato </h2>";
+echo $testo;
 ?>
 
