@@ -17,8 +17,9 @@ Grazie soprattutto alla diffusione di Wordpress[3] (CMS scritto in PHP), secondo
 
 echo $testo;
 echo "<br>";
-echo "Lunghezza testo: " . strlen($testo);
-
+echo "<br>";
+echo "<strong>Lunghezza testo: </strong>" . strlen($testo) . " caratteri";
+echo "<br>";
 
 $censura =  $_GET["censura"];
 
