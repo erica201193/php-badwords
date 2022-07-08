@@ -19,11 +19,11 @@ echo $testo;
 echo "<br>";
 echo "Lunghezza testo: " . strlen($testo);
 
+
 $censura =  $_GET["censura"];
 
+
 var_dump($_GET);
-echo "<br>";
-//echo $censura;
 echo "<br>";
 echo "il testo contiene la parola " . $censura . "? se si il primo indice dove la parola compare è il n. " . strpos($testo, "PHP");
 
